@@ -46,5 +46,18 @@ namespace Metody09_14_Github
                 MessageBox.Show("Ciferný součet sudých čísel: " + soucetSudCif);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string s1 = textBox5.Text;
+            string s2;
+            int pocetSlov = Swag.PocetSlov(s1, out s2);
+
+            Swag.PocetSlov(s1, out s2);
+            MessageBox.Show("Pocet slov: " + pocetSlov);
+            MessageBox.Show("Retezec: " + s2);
+            
+            
+        }
     }
 }

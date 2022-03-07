@@ -56,6 +56,32 @@ namespace Metody09_14_Github
             }
 
             return obsahujeCislici;
+       
+        }
+
+
+
+        public static int PocetSlov(string retezec, out string retezec2)
+        {
+            
+            char[] separators = { ' ' };
+            retezec = retezec.Trim();
+            string[] poleSlov = retezec.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            int PocetSlov = poleSlov.Length;
+            int i = 0;
+            
+            while (retezec.Length > i)
+            {
+                if (Char.IsDigit(retezec[i]))
+                {
+                    retezec = retezec.Remove(i, 1);
+                    
+                }
+                
+                i++;
+            }
+            retezec2 = retezec;
+            return (PocetSlov);
         }
     }
 }
