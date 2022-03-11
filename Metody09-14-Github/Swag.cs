@@ -76,12 +76,49 @@ namespace Metody09_14_Github
                 {
                     retezec = retezec.Remove(i, 1);
                     
-                }
-                
-                i++;
+                }else i++;
+
+
             }
             retezec2 = retezec;
             return (PocetSlov);
+        }
+
+
+
+        public static bool Identicke(string s1, string s2, out int pocetOdlisnychPozici, out int prvniIndex)
+        {
+            string vymennyRetezec;
+            bool identickeReterec = true, prvniPozice = false;
+            pocetOdlisnychPozici = 0;
+            prvniIndex = -1;
+            if (s1.Length > s2.Length)
+            {
+                vymennyRetezec = s1;
+                s1 = s2;
+                s2 = vymennyRetezec;
+            }
+            int delkaRozdiluS1aS2 = s2.Length - s1.Length;
+            for (int i = 0; i < s1.Length; ++i)
+            {
+                if(s1[i] != s2[i])
+                {
+                    pocetOdlisnychPozici++;
+                    if(!prvniPozice)
+                    {
+                        prvniPozice = true;
+                        prvniIndex = i;
+                    }
+                    if(identickeReterec) identickeReterec = false;
+                }
+            }
+            if(prvniIndex == -1)
+            {
+                prvniIndex = s1.Length;
+            }
+            pocetOdlisnychPozici += delkaRozdiluS1aS2;
+
+            return identickeReterec;
         }
     }
 }

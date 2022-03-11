@@ -59,5 +59,17 @@ namespace Metody09_14_Github
             
             
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string s1 = textBox8.Text;
+            string s2 = textBox9.Text;
+            int pocetOdlisnychPozic = 0, prvniIndex = -1;
+            bool identicke = Swag.Identicke(s1, s2, out pocetOdlisnychPozic, out prvniIndex);
+            if (identicke) MessageBox.Show("Ano jsou identicke");
+            else MessageBox.Show("Ne nejsou identicke");
+            MessageBox.Show("Počet odlišných pozic: " + pocetOdlisnychPozic);
+            MessageBox.Show("Prvni index: " + prvniIndex);
+        }
     }
 }
